@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disparidade de Públicos na Série B - Remo lidera, Avaí faz proposta polêmica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        header {
+            background: linear-gradient(to right, #0a2e6e, #1a5aa5);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .date {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            opacity: 0.95;
+        }
+        
+        .clubs-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        .club {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            transition: transform 0.3s ease;
+        }
+        
+        .club:hover {
+            transform: translateY(-5px);
+        }
+        
+        .club-remo {
+            background: linear-gradient(to bottom, #0a2e6e, #1a5aa5);
+            color: white;
+            box-shadow: 0 5px 15px rgba(10, 46, 110, 0.4);
+        }
+        
+        .club-avai {
+            background: linear-gradient(to bottom, #006b38, #009a55);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 107, 56, 0.4);
+        }
+        
+        .club-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .club-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .club-stats {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 8px 0;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #0a2e6e;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ffd700;
+            display: inline-block;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background: #fff9c4;
+            padding: 15px 20px;
+            border-left: 4px solid #ffd700;
+            margin: 25px 0;
+            font-size: 1.2rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .quote {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            position: relative;
+            border-left: 4px solid #1a5aa5;
+        }
+        
+        .quote:before {
+            content: """;
+            position: absolute;
+            top: -25px;
+            left: 10px;
+            font-size: 5rem;
+            color: #1a5aa5;
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+        
+        .quote-source {
+            font-style: italic;
+            margin-top: 10px;
+            color: #1a5aa5;
+            font-weight: 600;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background: #0a2e6e;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table tr:hover {
+            background: #e3f2fd;
+        }
+        
+        .proposal-details {
+            background: #f8fff8;
+            border: 1px solid #c8e6c9;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .proposal-title {
+            color: #006b38;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .proposal-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #c8e6c9;
+        }
+        
+        .proposal-item:last-child {
+            border-bottom: none;
+        }
+        
+        .proposal-icon {
+            font-size: 1.5rem;
+            color: #006b38;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .footer {
+            background: #0a2e6e;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .sources {
+            font-style: italic;
+            margin-top: 20px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .credits {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .clubs-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .club {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">ESPORTES BRASIL</div>
+                <div class="date">07 de junho de 2025</div>
+                <h1>DISPARIDADE DE PÚBLICOS NA SÉRIE B: REMO LIDERA, AVAÍ FAZ PROPOSTA POLÊMICA</h1>
+                <div class="subtitle">Clube paraense tem a maior média de público da competição, enquanto Avaí apresenta números modestos e surpreende com proposta de "aquisição" de torcedores</div>
+            </div>
+        </header>
+        
+        <div class="clubs-container">
+            <div class="club club-remo">
+                <div class="club-logo">
+                    <img src="https://logodetimes.com/times/remo/logo-remo-1024.png" alt="Remo" width="80">
+                </div>
+                <div class="club-name">Clube do Remo</div>
+                <div class="club-stats">Média de público: 21.067</div>
+                <div class="club-stats">Renda: R$ 3,8 milhões</div>
+                <div class="club-stats">Ranking: 14º nacional</div>
+            </div>
+            
+            <div class="club club-avai">
+                <div class="club-logo">
+                    <img src="https://logodetimes.com/times/avai/logo-avai-1024.png" alt="Avaí" width="80">
+                </div>
+                <div class="club-name">Avaí Futebol Clube</div>
+                <div class="club-stats">Média de público: ~2.800</div>
+                <div class="club-stats">Renda: ~R$ 420 mil</div>
+                <div class="club-stats">Ranking: Fora do Top 20</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">O CONTRASTE QUE CHOCA O FUTEBOL BRASILEIRO</h2>
+                <p>A Série B do Campeonato Brasileiro de 2025 apresenta uma das maiores disparidades de público dos últimos anos. Enquanto o Clube do Remo, de Belém, consolida a <strong>maior média de público da competição</strong> com 21.067 pagantes por jogo, o Avaí, de Santa Catarina, figura entre os últimos colocados em assistência, com média estimada abaixo dos 3.000 espectadores - número inferior à média geral da Série B, que é de 6.937.</p>
+                
+                <p>Os números impressionam: em cinco jogos como mandante, o Remo já registrou <strong>105.337 pagantes</strong> e renda bruta de <strong>R$ 3,8 milhões</strong>. Já o Avaí sequer aparece no Top 20 nacional de público. A situação catarinense tornou-se tão crítica que o Tribunal de Justiça Desportiva de Santa Catarina (TJD-SC) precisou intervir recentemente para obrigar o clube a igualar promoções de ingressos entre torcedores locais e visitantes, após denúncias de cobrança de valores até 10 vezes maiores para torcedores adversários.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">A PROPOSTA SURPREENDENTE</h2>
+                <p>Diante desse cenário, fontes próximas às diretorias revelaram ao nosso setorista uma proposta inédita e polêmica: o Avaí teria enviado um documento ao Clube do Remo propondo a "aquisição de pacotes de torcedores" do clube paraense.</p>
+                
+                <div class="proposal-details">
+                    <div class="proposal-title">DETALHES DA PROPOSTA</div>
+                    
+                    <div class="proposal-item">
+                        <div class="proposal-icon"><i class="fas fa-user-check"></i></div>
+                        <div>
+                            <strong>R$ 1.000 por torcedor remista</strong> "transferido" mediante comprovação de ida a estádios catarinenses
+                        </div>
+                    </div>
+                    
+                    <div class="proposal-item">
+                        <div class="proposal-icon"><i class="fas fa-crown"></i></div>
+                        <div>
+                            Pacotes de <strong>"torcedores premium"</strong> (sócios ativos) por valores individuais de <strong>R$ 5.000</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="proposal-item">
+                        <div class="proposal-icon"><i class="fas fa-trophy"></i></div>
+                        <div>
+                            Bônus adicional de <strong>R$ 100 mil</strong> por ponto conquistado pelo Avaí com presença comprovada de "torcedores adquiridos" no estádio
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote">
+                    "Isso é um desrespeito à história do futebol. Torcedor não tem preço, tem paixão. Quero construir minha história aqui justamente por essa energia única da nossa torcida."
+                    <div class="quote-source">Pedro Costa, lateral-direito do Remo</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">DISPARIDADE EM NÚMEROS</h2>
+                
+                <table class="comparison-table">
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Remo</th>
+                        <th>Avaí</th>
+                        <th>Variação</th>
+                    </tr>
+                    <tr>
+                        <td>Média de Público</td>
+                        <td>21.067</td>
+                        <td>~2.800*</td>
+                        <td>+652%</td>
+                    </tr>
+                    <tr>
+                        <td>Renda Bruta (R$)</td>
+                        <td>R$ 3,8 milhões</td>
+                        <td>~R$ 420 mil*</td>
+                        <td>+804%</td>
+                    </tr>
+                    <tr>
+                        <td>Ranking Nacional</td>
+                        <td>14º</td>
+                        <td>Fora do Top 20</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Capacidade do Estádio</td>
+                        <td>~45.000 (Mangueirão)</td>
+                        <td>~17.800 (Ressacada)</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <p class="sources">*Estimativas baseadas em dados comparativos da Série B</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">CRISE INSTITUCIONAL</h2>
+                <p>Fontes do departamento financeiro do Avaí revelaram que a iniciativa surgiu após uma série de fatores:</p>
+                
+                <div class="highlight">
+                    <i class="fas fa-exclamation-triangle"></i> Fracasso em promoções tradicionais como ingressos a R$ 20 com uso de camisa do clube
+                </div>
+                
+                <div class="highlight">
+                    <i class="fas fa-chart-line"></i> Queda de 40% na receita de sócio-torcedor em 2025
+                </div>
+                
+                <div class="highlight">
+                    <i class="fas fa-frown"></i> Pressão por resultados após sequência de 3 derrotas consecutivas
+                </div>
+                
+                <div class="quote">
+                    "Estamos avaliando todas as alternativas legais para reverter este cenário crítico de público. Nenhuma ideia inovadora está descartada."
+                    <div class="quote-source">Sandro Barreto, advogado do Avaí</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">REAÇÃO NO NORTE</h2>
+                <p>No Pará, a resposta à proposta foi imediata e contundente. O Clube do Remo intensificou campanhas de <strong>regularização de sócios inadimplentes</strong>, com mensalidades promocionais a R$ 150. Nas redes sociais, a hashtag <strong>#NãoTemosPreço</strong> viralizou entre os torcedores azulinos.</p>
+                
+                <p>Executivos do Remo lembraram que o clube detém o <strong>maior número de torcedores do Norte do Brasil</strong>, segundo pesquisa Datafolha. O departamento de marketing do clube já prepara ações especiais para o próximo jogo no Mangueirão, contra o Operário-PR, onde a torcida promete um protesto simbólico com cartazes dizendo "Ninguém compra a nossa alma".</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Fontes:</strong> Setoristas de Remo e Avaí, Departamento de Competições da CBF, Relatórios de Público da Série B 2025</p>
+            <p class="sources">Dados atualizados em 06 de junho de 2025</p>
+            <p class="credits">Reportagem: Redação Esportes Brasil | Desenvolvimento Web: Equipe de Tecnologia</p>
+        </div>
+    </div>
+</body>
+</html>
